@@ -12,3 +12,18 @@ function truncate(string $text,int $length=100)
         return $text;
     }
 }
+
+function slugify(string $text): string { 
+	
+	$text = strtolower($str); 
+	 
+	$text = str_replace(' ', '-', $str); 
+	 
+	$text = preg_replace('/[^a-z0-9\-]/', '', $str); 
+ 
+	$text = preg_replace('/-+/', '-', $str); 
+	
+	$text = trim($str, '-'); 
+	
+	return $text; 
+}
