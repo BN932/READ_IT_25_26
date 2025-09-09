@@ -16,3 +16,6 @@ RewriteRule ^users/login\-form$ index.php?users=login-form [L]
 # URL: users/login
 # PATTERN: ?users=login
 RewriteRule ^users/login$ index.php?users=login [L]
+
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+RewriteRule ^(.*)$ index.php [L]

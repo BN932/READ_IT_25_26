@@ -17,7 +17,7 @@ function loginAction(PDO $connection, array $credentials) {
         $user = UsersModel\checkAction($connection, $credentials);
         $_SESSION['user'] = $user;
         if ($user):
-            header('Location: ' . ADMIN_BASE_URL . 'index.php');
+            header('Location: ' . ADMIN_BASE_URL . 'dashboard');
         else:
             header('Location: ' . PUBLIC_BASE_URL . 'users/login-form');
         endif;
