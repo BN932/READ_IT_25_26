@@ -15,4 +15,3 @@ function dashboardAction(PDO $connection)
 
 
 }
-

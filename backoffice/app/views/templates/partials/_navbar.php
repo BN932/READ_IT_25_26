@@ -33,9 +33,10 @@
                             <li><a href="#">Liste des utilisateurs</a></li>
                             <li><a href="#">Ajouter un utilisateur</a></li>
                         </ul>
+                    <li><a href="users/logout">LOGOUT</a></li>
                     </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
         </div>
-        </nav>
+        
