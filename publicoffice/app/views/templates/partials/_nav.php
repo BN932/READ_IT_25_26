@@ -9,6 +9,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="?" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+			  <li class="nav-item"><a href="users/login-form" class="nav-link">Login</a></li>
 	        </ul>
 	      </div>
 		</div>
