@@ -6,4 +6,12 @@ switch($_GET['users']) :
     case 'logout':
             UsersController\logoutAction();
         break;
-    endswitch;
+    case 'create':
+            UsersController\createUserAction($connection, $_POST);      
+        break;
+    case 'new':
+            UsersController\displayAddUserForm();
+        break;
+    default:
+            UsersController\indexAction($connection);
+endswitch;

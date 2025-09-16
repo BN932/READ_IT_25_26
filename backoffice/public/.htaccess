@@ -1,8 +1,19 @@
 RewriteEngine on
 
 # ROUTES
+
 #Route : /users/logout ?users=logout
 RewriteRule ^users/logout$ index.php?users=logout [L]
+
+#Route : /users/logout ?users=index
+RewriteRule ^users/index$ index.php?users=index [L]
+
+#Route : /users/form "users=new
+RewriteRule ^users/new$ index.php?users=form [L]
+
+#Route : /users/add "users=add
+RewriteRule ^users/add$ index.php?users=new [L]
+
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
