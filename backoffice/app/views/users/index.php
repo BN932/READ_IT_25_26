@@ -19,7 +19,7 @@
             <td><?php echo $user['id']; ?></td>
             <td><?php echo $user['firstname']; ?></td>
             <td><?php echo $user['lastname']; ?></td>
-            <td>@<?php echo $user['email']; ?></td>
+            <td><?php echo $user['email']; ?></td>
             <td>
               <button type="button" class="btn btn-primary">Modifier</button>
               <button type="button" class="btn btn-secondary">Supprimer</button>

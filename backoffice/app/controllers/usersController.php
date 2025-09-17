@@ -22,6 +22,7 @@ function displayAddUserForm() {
     include '../app/views/users/new.php';
 }
 
-/*function createUserAction($connection, $_POST){
-    UsersModel\
-}*/
+function createAction(PDO $connection, array $userInfo){
+    $response = UsersModel\createOne($connection, $userInfo);
+    header('Location: '.ADMIN_BASE_URL . 'users/index');
+}
