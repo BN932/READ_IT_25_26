@@ -15,6 +15,8 @@ function findAll(PDO $connection){
 }
 
 function createOne(PDO $connection, array $data){
+    $psw_enc = password_hash($data['password'], PASSWORD_DEFAULT);
+
     $sql = "INSERT INTO users
             SET
             firstname = :firstname,
@@ -26,6 +28,6 @@ function createOne(PDO $connection, array $data){
     $rs ->bindValue('firstname', $data['firstname'], PDO::PARAM_STR);
     $rs ->bindValue('lastname', $data['lastname'], PDO::PARAM_STR);
     $rs ->bindValue('email', $data['email'], PDO::PARAM_STR);
-    $rs ->bindValue('password', $data['password'], PDO::PARAM_STR);
+    $rs ->bindValue('password', $psw_enc, PDO::PARAM_STR);
     return $rs->execute();
 }
