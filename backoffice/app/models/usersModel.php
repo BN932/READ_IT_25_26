@@ -57,5 +57,12 @@ function updateOne(PDO $connection, array $info){
     $rs->bindValue('password', $info['password'], PDO::PARAM_STR);
     $rs->bindValue('id', $info['id'], PDO::PARAM_INT);
     $rs->execute();
-    
+}
+
+function deleteOne(PDO $connection, int $id){
+    $sql="DELETE from users
+          WHERE id= :id;";
+    $rs = $connection -> prepare($sql);
+    $rs -> bindValue('id', $id, PDO::PARAM_INT);
+    $rs->execute();
 }

@@ -53,3 +53,8 @@ function postAction(PDO $connection, array $updateInfo){
     UsersModel\updateOne($connection, $updateInfo);
     showAction($connection, $updateInfo['id']);
 }
+
+function deleteAction(PDO $connection, int $id){
+    UsersModel\deleteOne($connection, $id);
+    header('Location: '.ADMIN_BASE_URL.'users/index');
+}

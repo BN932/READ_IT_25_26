@@ -21,8 +21,8 @@
             <td><?php echo $user['lastname']; ?></td>
             <td><?php echo $user['email']; ?></td>
             <td>
-              <a href="users/edit/<?php echo $user['id']; ?>"><button type="button" class="btn btn-primary">Modifier</button></a>
-              <button type="button" class="btn btn-secondary">Supprimer</button>
+              <a class="btn btn-primary" href="users/edit/<?php echo $user['id']; ?>">Modifier</a>
+              <a class="btn btn-secondary" href="users/delete/<?php echo $user['id']; ?>">Supprimer</a>
             </td>
           </tr>
           <?php endforeach;?>
