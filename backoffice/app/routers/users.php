@@ -12,6 +12,12 @@ switch($_GET['users']) :
     case 'new':
             UsersController\displayAddUserForm();
         break;
+    case 'edit':
+            UsersController\showFormAction($connection, $_GET['id']);
+        break;
+    case 'post':
+            UsersController\postAction($connection, $_POST);
+        break;
     default:
             UsersController\indexAction($connection);
 endswitch;

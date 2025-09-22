@@ -12,5 +12,3 @@ function checkAction(PDO $connection, array $credentials) {
     $user = $rs->fetch(PDO::FETCH_ASSOC);
     return password_verify($credentials['password'], $user['password'])? $user : false;
 }
-
-

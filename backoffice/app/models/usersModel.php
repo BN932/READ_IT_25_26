@@ -14,6 +14,17 @@ function findAll(PDO $connection){
     return $rs -> fetchAll(PDO::FETCH_ASSOC);
 }
 
+function findOneById(PDO $connection, int $id){
+    $sql = "SELECT*
+            FROM users
+            WHERE id = :id;";
+
+    $rs = $connection -> prepare($sql);
+    $rs -> bindValue('id', $id, PDO::PARAM_INT);
+    $rs-> execute();
+    return $rs ->fetch(PDO::FETCH_ASSOC);
+}
+
 function createOne(PDO $connection, array $data){
     $psw_enc = password_hash($data['password'], PASSWORD_DEFAULT);
 
@@ -30,4 +41,21 @@ function createOne(PDO $connection, array $data){
     $rs ->bindValue('email', $data['email'], PDO::PARAM_STR);
     $rs ->bindValue('password', $psw_enc, PDO::PARAM_STR);
     return $rs->execute();
+}
+
+function updateOne(PDO $connection, array $info){
+    $sql = "UPDATE users
+            SET firstname = :firstname,
+                lastname = :lastname,
+                email = :email,
+                password = :password
+            WHERE id = :id;";
+    $rs = $connection -> prepare($sql);
+    $rs->bindValue('firstname', $info['firstname'], PDO::PARAM_STR);
+    $rs->bindValue('lastname', $info['lastname'], PDO::PARAM_STR);
+    $rs ->bindValue('email', $info['email'], PDO::PARAM_STR);
+    $rs->bindValue('password', $info['password'], PDO::PARAM_STR);
+    $rs->bindValue('id', $info['id'], PDO::PARAM_INT);
+    $rs->execute();
+    
 }

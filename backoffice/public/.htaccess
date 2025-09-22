@@ -2,17 +2,23 @@ RewriteEngine on
 
 # ROUTES
 
-#Route : /users/logout ?users=logout
+#Route : users/logout ?users=logout
 RewriteRule ^users/logout$ index.php?users=logout [L]
 
-#Route : /users/logout ?users=index
+#Route : users/index ?users=index
 RewriteRule ^users/index$ index.php?users=index [L]
 
-#Route : /users/form "users=new
+#Route : users/form ?users=new
 RewriteRule ^users/new$ index.php?users=new [L]
 
-#Route : /users/create "users=create
+#Route : users/create ?users=create
 RewriteRule ^users/create$ index.php?users=create [L]
+
+#Route : users/edit/id ?users=edit&id=x
+RewriteRule ^users/edit/([1-9][0-9]*)$ index.php?users=edit&id=$1 [L]
+
+#Route : users/post ?users=post
+RewriteRule ^users/post$ index.php?users=post [L]
 
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
